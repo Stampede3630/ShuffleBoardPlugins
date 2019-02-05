@@ -27,5 +27,5 @@ public class App extends Plugin {
    }
    
 }
-//NOW THAT YOU FINISHED CREATING THE PLUGIN GO TO RoutineSelectorWidget.Java
+//NOW THAT YOU FINISHED CREATING THE PLUGIN, GO TO RoutineSelectorWidget.Java
 
