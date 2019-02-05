@@ -16,12 +16,16 @@ import edu.wpi.first.shuffleboard.api.widget.WidgetType;
  */
 @Description(group = "edu.stampede3630", name = "routineSelector", summary = "My first try at this crap", version = "1.0.0")
 public class App extends Plugin {
-   //this will tell shuffleboard, hey these are all the neat widgets I created
-   //The widgets should be stored in the same folder as this plugin.  This formula should be formatted thusly:
-   // return ImmutableList.of(WidgetType.forAnnotatedWidget(javaWidget.class), WidgetType.forAnnotatedWidget(NEXTJavaWidget.class));
+   /**
+    * this will tell shuffleboard, hey these are all the neat widgets I created
+    * The widgets should be stored in the same folder as this plugin.  This formula should be formatted thusly:
+    * return ImmutableList.of(WidgetType.forAnnotatedWidget(javaWidget.class), WidgetType.forAnnotatedWidget(NEXTJavaWidget.class));
+    */
    @Override
    public List<ComponentType> getComponents() {
        return ImmutableList.of(WidgetType.forAnnotatedWidget(RoutineSelectorWidget.class) );
    }
-
+   
 }
+//NOW THAT YOU FINISHED CREATING THE PLUGIN GO TO RoutineSelectorWidget.Java
+
