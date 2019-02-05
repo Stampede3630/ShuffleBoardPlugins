@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.TextField?>
 <?import java.lang.Double?>
 
+<!--  
+    You made it!!!  If you are totally confused... you should navigate to:
+    ShuffleBoardPlugins/routineSelector/src/main/java/edu/stampede3630/routineSelector/
+    
+    Alrite firstoff, we're in a completely different folder structure, why, I don't know I followed a tutorial.
+    I'm not entirely sure why Java knows that folder exists. I THINK it's because we declared the connection
+    below in the fx:controller.
+    
+    Now we look a little different.  This is like XML and Java had a baby.  You can see that imports
+    look ver similiar to java imports.  The rest.... not so much.  You can technically add scripting code in
+    here... but haven;t found the need for it yet.
+
+    First things first, shuffleboard widgets are basically panes that contain (children or nodes). So we open
+    (I don't know XML terminology) by defining an AnchorPane.  "xmlns:fx" just says we will use the prefix "fx"
+    everytime we want to use JavaFX terminology.  We then define what controls are pane which is a reference to 
+    our java classes here: 
+    ShuffleBoardPlugins/routineSelector/src/main/java/edu/stampede3630/routineSelector/RoutineSelectorWidget.java
+    
+    fx:id for this line needs to match what you declared in the widget class
+    stylesheets allow us to point to a CSS file where I can edit fonts, change backgrounds etc.
+--> 
+
+
+
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.stampede3630.routineSelector.RoutineSelectorWidget" 
 fx:id="_thePane" stylesheets="@cssfilepath.css" minWidth="100" minHeight="100">
-
+    <!-- I defined a whole bunch of variables in the define block below.  The first one is the Togglegroup.
+         The radiobuttons need to attach to SOMETHING.  So if I declare an fx:id then I can reference it later
+         
+         The rest are doubles.  In order to ensure things lined up properly I declared a whole bunch of doubles.
+         That way one coordinate change changes the alignment on a whole bunch of buttons so things stay inline.
+    -->
     <fx:define>
         <ToggleGroup fx:id="_theFieldTG"/>
-        <ToggleGroup fx:id="_theGamePieceTG"/>
         <Double fx:id="LeftRocketFarNearX" fx:value="13.5"/>
         <Double fx:id="RightRocketFarNearX" fx:value="83.7"/>
         <Double fx:id="RocketFarY" fx:value="19.3"/>
@@ -26,11 +53,10 @@ fx:id="_thePane" stylesheets="@cssfilepath.css" minWidth="100" minHeight="100">
         <Double fx:id="CargoFaceY" fx:value="39.7"/>
         <Double fx:id="IntakeY" fx:value="87.6"/>
     </fx:define>
-
+    <!-- Here's all the elements that I care about below.  They are appropriately under the children tag.  This allows
+         me to cycle through all children and change translateX and translateY to different positions -->
     <children>
         <TextField  fx:id="_selected" layoutX="50" layoutY ="50"/>
-        <RadioButton fx:id="cargo" toggleGroup="$_theGamePieceTG" layoutX = "25" layoutY = "5"/>
-        <RadioButton fx:id="hatch" toggleGroup="$_theGamePieceTG" layoutX = "75" layoutY = "5"/>
         <RadioButton fx:id="LeftFarRS" toggleGroup="$_theFieldTG"  layoutX="$LeftRocketFarNearX" layoutY="$RocketFarY"/>
         <RadioButton fx:id="LeftMidRS" toggleGroup="$_theFieldTG" layoutX="18" layoutY="$RocketMidY"/>
         <RadioButton fx:id="LeftNearRS" toggleGroup="$_theFieldTG" layoutX="$LeftRocketFarNearX" layoutY="$RocketNearY"/>
