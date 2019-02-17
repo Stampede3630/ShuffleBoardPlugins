@@ -122,5 +122,6 @@ public class RoutineSelectorWidget extends SimpleAnnotatedWidget<String> {
     /**
      * YOU MADE IT PAST PROBABLY THE HARDEST PART!!!!  Now navigate to: 
      * ShuffleBoardPlugins/routineSelector/src/main/resources/edu/stampede3630/routineSelector/RoutineSelectorWidget.fxml
+    **/
 } 
 
