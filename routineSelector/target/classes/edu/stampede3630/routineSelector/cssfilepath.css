@@ -6,3 +6,9 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100% 100%; 
 }
+
+.radio-button .radio {
+    -fx-scale-x:3;
+    -fx-scale-y:3;
+
+}
