@@ -47,9 +47,9 @@ fx:id="_thePane" stylesheets="@cssfilepath.css" minWidth="100" minHeight="100">
         <Double fx:id="RocketNearY" fx:value="38.6"/>
         <Double fx:id="LeftCargoX" fx:value="34"/>
         <Double fx:id="RightCargoX" fx:value="63"/>
-        <Double fx:id="CargoFarY" fx:value="8.1"/>
-        <Double fx:id="CargoMidY" fx:value="14"/>
-        <Double fx:id="CargoNearY" fx:value="21.8"/>
+        <Double fx:id="CargoFarY" fx:value="8"/>
+        <Double fx:id="CargoMidY" fx:value="21"/>
+        <Double fx:id="CargoNearY" fx:value="34"/>
         <Double fx:id="CargoFaceY" fx:value="39.7"/>
         <Double fx:id="IntakeY" fx:value="87.6"/>
     </fx:define>
