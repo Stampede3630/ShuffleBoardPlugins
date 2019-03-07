@@ -14,7 +14,7 @@ import edu.wpi.first.shuffleboard.api.widget.WidgetType;
  * The group, name, summary, version are arbitrary, but try to keep the group name for all stampede plugins.
  * In hindsight, I would have named the "name" DeepSpacePlugins or something to that effect.
  */
-@Description(group = "edu.stampede3630", name = "routineSelector", summary = "My first try at this crap", version = "1.0.0")
+@Description(group = "edu.stampede3630", name = "SJVs Plugins", summary = "Now, More Clickable", version = "2.0.0")
 public class App extends Plugin {
    /**
     * this will tell shuffleboard, hey these are all the neat widgets I created

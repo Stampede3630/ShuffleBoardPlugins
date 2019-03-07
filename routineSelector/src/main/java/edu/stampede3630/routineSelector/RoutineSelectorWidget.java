@@ -32,7 +32,7 @@ import javafx.scene.control.Toggle;
  * just needs to have the same package declared at the top of page.
  */
 
-@Description(dataTypes = { StringType.class }, name = "MyTestWidget")
+@Description(dataTypes = { StringType.class }, name = "PathSelector")
 @ParametrizedController(value = "RoutineSelectorWidget.fxml")
 public class RoutineSelectorWidget extends SimpleAnnotatedWidget<String> {
 
@@ -96,6 +96,7 @@ public class RoutineSelectorWidget extends SimpleAnnotatedWidget<String> {
                 for (Node node : _thePane.getChildren()) {
                     //TranslateY(or X) is a method that moves the node (child) over from the original position
                     node.setTranslateY(node.getLayoutY()*multiplier - node.getLayoutY());
+                    node.setScaleY(multiplier/2);
                 }
             }
         });
@@ -106,6 +107,7 @@ public class RoutineSelectorWidget extends SimpleAnnotatedWidget<String> {
                 double multiplier =  newValue.doubleValue()/100;
                 for (Node node : _thePane.getChildren()) {
                     node.setTranslateX(node.getLayoutX()*multiplier - node.getLayoutX());
+                    node.setScaleX(multiplier/2);
                 }
             }
         });
