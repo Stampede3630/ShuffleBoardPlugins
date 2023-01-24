@@ -16,7 +16,7 @@
     
     Now we look a little different.  This is like XML and Java had a baby.  You can see that imports
     look ver similiar to java imports.  The rest.... not so much.  You can technically add scripting code in
-    here... but haven't found the need for it yet.
+    here... but haven;t found the need for it yet.
 
     First things first, shuffleboard widgets are basically panes that contain (children or nodes). So we open
     (I don't know XML terminology) by defining an AnchorPane.  "xmlns:fx" just says we will use the prefix "fx"
@@ -38,21 +38,48 @@ fx:id="_thePane" stylesheets="@cssfilepath.css" minWidth="100" minHeight="100">
          The rest are doubles.  In order to ensure things lined up properly I declared a whole bunch of doubles.
          That way one coordinate change changes the alignment on a whole bunch of buttons so things stay inline.
     -->
-    
+    <fx:define>
+        <ToggleGroup fx:id="_theFieldTG"/>
+        <Double fx:id="LeftRocketFarNearX" fx:value="13.5"/>
+        <Double fx:id="RightRocketFarNearX" fx:value="83.7"/>
+        <Double fx:id="RocketFarY" fx:value="50"/>
+        <Double fx:id="RocketMidY" fx:value="61"/>
+        <Double fx:id="RocketNearY" fx:value="72"/>
+        <Double fx:id="LeftCargoX" fx:value="25"/>
+        <Double fx:id="RightCargoX" fx:value="75"/>
+        <Double fx:id="CargoFarY" fx:value="8"/>
+        <Double fx:id="CargoMidY" fx:value="19"/>
+        <Double fx:id="CargoNearY" fx:value="31"/>
+        <Double fx:id="CargoFaceY" fx:value="59"/>
+        <Double fx:id="IntakeY" fx:value="87.6"/>
+    </fx:define>
     <!-- Here's all the elements that I care about below.  They are appropriately under the children tag.  This allows
          me to cycle through all children and change translateX and translateY to different positions -->
     <children>
         <TextField  fx:id="_selected" layoutX="50" layoutY ="87.6"/>
-        
-        <RadioButton fx:id="leftHigh" layoutX="0" layoutY="0"/>
-        <RadioButton fx:id="rightHigh" layoutX="0" layoutY="0"/>
-        <RadioButton fx:id="midHigh" layoutX="0" layoutY="0"/>
-        <RadioButton fx:id="leftMid" layoutX="0" layoutY="0"/>
-        <RadioButton fx:id="rightMid" layoutX="0" layoutY="0"/>
-        <RadioButton fx:id="midMid" layoutX="0" layoutY="0"/>
-        <RadioButton fx:id="leftLow" layoutX="0" layoutY="0"/>
-        <RadioButton fx:id="righLow" layoutX="0" layoutY="0"/>
-        <RadioButton fx:id="midLow" layoutX="0" layoutY="0"/>
+
+        <RadioButton fx:id="GrabBall" toggleGroup="$_theFieldTG" layoutY="72" layoutX="47.2"/>
+
+        <RadioButton fx:id="LeftLS" toggleGroup="$_theFieldTG" layoutX="12.4" layoutY="$IntakeY" />
+
+        <RadioButton fx:id="LeftFarRS" toggleGroup="$_theFieldTG"  layoutX="$LeftRocketFarNearX" layoutY="$RocketFarY"/>
+        <RadioButton fx:id="LeftMidRS" toggleGroup="$_theFieldTG" layoutX="18" layoutY="$RocketMidY"/>
+        <RadioButton fx:id="LeftNearRS" toggleGroup="$_theFieldTG" layoutX="$LeftRocketFarNearX" layoutY="$RocketNearY"/>
+
+        <RadioButton fx:id="LeftFarCS" toggleGroup="$_theFieldTG" layoutX="$LeftCargoX" layoutY="$CargoFarY"/>
+        <RadioButton fx:id="LeftMidCS" toggleGroup="$_theFieldTG" layoutX="$LeftCargoX" layoutY="$CargoMidY"/>
+        <RadioButton fx:id="LeftNearCS" toggleGroup="$_theFieldTG" layoutX="$LeftCargoX" layoutY="$CargoNearY"/>
+        <RadioButton fx:id="RightFarCS" toggleGroup="$_theFieldTG"  layoutX="$RightCargoX" layoutY="$CargoFarY"/>
+        <RadioButton fx:id="RightMidCS" toggleGroup="$_theFieldTG"  layoutX="$RightCargoX" layoutY="$CargoMidY"/>
+        <RadioButton fx:id="RightNearCS" toggleGroup="$_theFieldTG"  layoutX="$RightCargoX" layoutY="$CargoNearY"/>
+        <RadioButton fx:id="LeftFaceCS" toggleGroup="$_theFieldTG"  layoutX="42" layoutY="$CargoFaceY"/>
+        <RadioButton fx:id="RightFaceCS" toggleGroup="$_theFieldTG"  layoutX="58" layoutY="$CargoFaceY"/>
+
+        <RadioButton fx:id="RightFarRS" toggleGroup="$_theFieldTG" layoutX="$RightRocketFarNearX" layoutY="$RocketFarY"/>
+        <RadioButton fx:id="RightMidRS" toggleGroup="$_theFieldTG" layoutX="79" layoutY="$RocketMidY"/>
+        <RadioButton fx:id="RightNearRS" toggleGroup="$_theFieldTG" layoutX="$RightRocketFarNearX" layoutY="$RocketNearY"/>
+
+        <RadioButton fx:id="RightLS" toggleGroup="$_theFieldTG" layoutX="88.8" layoutY="$IntakeY"/>
 
     </children>
 </AnchorPane>
