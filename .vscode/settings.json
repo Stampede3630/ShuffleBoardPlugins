@@ -1,5 +1,6 @@
 {
     "maven.view": "hierarchical",
     "breadcrumbs.enabled": true,
-    "workbench.editor.highlightModifiedTabs": true
+    "workbench.editor.highlightModifiedTabs": true,
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

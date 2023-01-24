@@ -14,7 +14,6 @@ import javafx.fxml.FXML;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Toggle;
-
 /**
  * If you haven't looked at App.Java yet.... Do so.....
  * Congrats! You created a plugin that houses all the cool widgets you are about to make.  This file
